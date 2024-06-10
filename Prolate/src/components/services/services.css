@@ -1,0 +1,181 @@
+:root {
+    --circle-size: 17vmin;
+    --circle-spacing: calc((var(--circle-size) * 0.866) * 1.27);
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0 100px 150px 0;
+    padding: 0 0 100px 0; /* Added padding-bottom */
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 1fr 1fr;
+    min-height: 100vh; /* Ensures full viewport height */
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;    
+}
+
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 475px 100px;
+    grid-column: 1 / 2;
+    overflow: auto;
+}
+
+
+
+.services-section {
+    padding: 60px 0;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    grid-column: 1 / -1; /* Span full width */
+}
+
+.services-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    text-align: center; /* Center the heading */
+}
+
+.services-section h2::after {
+    content: '';
+    width: 100px;
+    height: 4px;
+    background-color: #ffcc00;
+    display: block;
+    margin: 10px auto 0;
+}
+
+.services-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center align the services */
+    gap: 15px; /* Add gap for better spacing */
+    max-width: 100%; /* Ensure it doesn't overflow */
+}
+
+.service {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(100px);
+    -webkit-backdrop-filter: blur(100px);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    position: relative;
+    z-index: 1;
+    flex: 1 1 calc(33.333% - 30px); /* Maintain three items per row */
+    max-width: calc(33.333% - 30px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.service h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #ffcc00;
+}
+
+.service p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.service:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.service-icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.service-icon svg {
+    width: 100%;
+    height: 100%;
+    fill: #ffcc00;
+}
+
+.service:hover .service-icon {
+    transform: rotate(360deg);
+}
+
+.call-to-action {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #ffcc00;
+    color: #005566;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    display: none;
+}
+
+.service:hover .call-to-action {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .header {
+        justify-content: center;
+        padding: 10px;
+    }
+    .main {
+        padding: 10px;
+        text-align: center;
+    }
+    .main h1 {
+        font-size: 3rem;
+    }
+    .main h2 {
+        font-size: 1.5rem;
+    }
+    .main p {
+        font-size: 1rem;
+    }
+    .circle-container {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        margin-top: 20px;
+    }
+    .circle {
+        width: 20vw;
+        height: 20vw;
+    }
+    .services-section {
+        padding: 40px 0;
+    }
+    .services-section h2 {
+        font-size: 2rem;
+    }
+    .service {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+    .service h3 {
+        font-size: 1.5rem;
+    }
+    .service p {
+        font-size: 0.9rem;
+    }
+}
