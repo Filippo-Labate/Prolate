@@ -34,28 +34,7 @@
     </div>
 </div>
     
-<script>
-    document.getElementById("get-started-button").onclick = function(event) {
-        event.preventDefault();
-        document.getElementById("form-modal").classList.add("active");
-    }
-    
-    document.getElementById("close-modal").onclick = function() {
-        document.getElementById("form-modal").classList.remove("active");
-    }
-    
-    window.onclick = function(event) {
-        if (event.target == document.getElementById("form-modal")) {
-            document.getElementById("form-modal").classList.remove("active");
-        }
-    }
-    
-    document.addEventListener('keydown', function(event) {
-        if (event.key === "Escape") {
-            document.getElementById("form-modal").classList.remove("active");
-        }
-    });
-    </script>
+
 
             <section id="services" class="services-section">
                 <div class="container">
@@ -140,4 +119,26 @@
                     </div>
     </div>
 </body>
+<script>
+    document.getElementById("get-started-button").onclick = function(event) {
+        event.preventDefault();
+        document.getElementById("form-modal").classList.add("active");
+    }
+    
+    document.getElementById("close-modal").onclick = function() {
+        document.getElementById("form-modal").classList.remove("active");
+    }
+    
+    window.onclick = function(event) {
+        if (event.target == document.getElementById("form-modal")) {
+            document.getElementById("form-modal").classList.remove("active");
+        }
+    }
+    
+    document.addEventListener('keydown', function(event) {
+        if (event.key === "Escape") {
+            document.getElementById("form-modal").classList.remove("active");
+        }
+    });
+    </script>
 </html>
