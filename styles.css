@@ -4,7 +4,7 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto';
     margin: 100 100 150 0;
     padding: 0 0 100px 0; /* Added padding-bottom */
     display: grid;
@@ -62,10 +62,9 @@ body {
 }
 
 .main h1 {
-    font-family: 'Oswald', sans-serif;
-    font-size: 5rem;
+    font-size: 8rem;
     margin: 0;
-    font-weight: 500;
+    font-weight: 520;
 }
 
 .main h2 {
