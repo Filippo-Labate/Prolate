@@ -14,7 +14,7 @@ body {
     width: 100%;
     overflow-x: hidden;
     overflow-y: auto;
-    background: linear-gradient(180deg, #fcf9f7 0%, #cce7e8 7%, #588485 25%, #66b7ba 50%, #003344 95%);
+    background: linear-gradient(180deg, #fcf9f7 0%, #669596 25%, #66b7ba 50%, #003344 95%);
 }
 
 .header {
