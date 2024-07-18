@@ -29,8 +29,10 @@
 <div id="form-modal" class="form-modal">
     <div class="form-content">
         <span class="close-button" id="close-modal">&times;</span>
-        <iframe id="google-form" src="https://docs.google.com/forms/d/e/1FAIpQLSds9YsT5PfyT3IhIXk2nKOZR3xMsyNTTy7qy5D97jVJdPM-XQ/viewform?embedded=true" width="100%" height="969/widht" frameborder="0" marginheight="0" marginwidth="0"></iframe>
-    </div>
+        <div id="contactDetails" style="display: none;">
+            <p>You can contact us at: <strong>contact@example.com</strong></p>
+            <p>Or call us at: <strong>+1 234 567 890</strong></p>
+        </div></div>
 </div>
  <section id="services" class="services-section">
      <div class="container">
@@ -221,5 +223,24 @@
             document.getElementById("form-modal").classList.remove("active");
         }
     });
+    document.getElementById('get-started-button').addEventListener('click', function(event) {
+            event.preventDefault();
+
+            var email = 'contact@example.com';
+            var subject = 'Subject Here';
+            var body = 'Message Body Here';
+            var mailtoLink = 'mailto:' + email + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+
+            // Try to open the mailto link
+            window.location.href = mailtoLink;
+
+            // After 500ms, check if the mailto link opened successfully
+            setTimeout(function() {
+                if (!document.hasFocus() || document.hidden || window.innerWidth <= 0 || window.innerHeight <= 0) {
+                    // If mailto link did not open successfully, show contact details
+                    document.getElementById('contactDetails').style.display = 'block';
+                }
+            }, 500);
+        });
     </script>
 </html>
