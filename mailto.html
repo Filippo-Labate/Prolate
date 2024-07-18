@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+</head>
+<body>
+
+    <button id="contactButton">Contact Us</button>
+
+    <div id="contactDetails" style="display: none;">
+        <p>You can contact us at: <strong>contact@example.com</strong></p>
+        <p>Or call us at: <strong>+1 234 567 890</strong></p>
+    </div>
+
+    <script>
+        document.getElementById('contactButton').addEventListener('click', function(event) {
+            event.preventDefault();
+
+            var email = 'contact@example.com';
+            var subject = 'Subject Here';
+            var body = 'Message Body Here';
+            var mailtoLink = 'mailto:' + email + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+
+            // Try to open the mailto link
+            window.location.href = mailtoLink;
+
+            // After 500ms, check if the mailto link opened successfully
+            setTimeout(function() {
+                if (!document.hasFocus() || document.hidden || window.innerWidth <= 0 || window.innerHeight <= 0) {
+                    // If mailto link did not open successfully, show contact details
+                    document.getElementById('contactDetails').style.display = 'block';
+                }
+            }, 500);
+        });
+    </script>
+
+</body>
+</html>

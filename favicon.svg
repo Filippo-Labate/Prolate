@@ -1,11 +1,5 @@
 <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-    <circle id="circle1" cx="100" cy="50" r="30" fill="#00BFFF">
-      <animate attributeName="r" values="33;37;33" dur="3s" repeatCount="indefinite"/>
-    </circle>
-    <circle id="circle2" cx="50" cy="130" r="30" fill="#5A7D8A">
-      <animate attributeName="r" values="33;37;33" dur="3s" repeatCount="indefinite"/>
-    </circle>
-    <circle id="circle3" cx="150" cy="130" r="30" fill="#0A2D2E">
-      <animate attributeName="r" values="33;37;33" dur="3s" repeatCount="indefinite" />
+    <circle id="circle1" cx="100" cy="100" r="100" fill="#00BFFF">
+      <animate attributeName="r" values="75;100;75" dur="3s" repeatCount="indefinite"/>
     </circle>
   </svg>
